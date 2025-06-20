@@ -32,7 +32,7 @@ namespace CatalogoProdutos.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Alterar([FromRoute] int id, [FromBody] EditarProdutoDTO dadosDaAlteracao)
+        public IActionResult Alterar(int id, [FromBody] EditarProdutoDTO dadosDaAlteracao)
         {
             try
             {
