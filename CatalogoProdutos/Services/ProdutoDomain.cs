@@ -1,7 +1,8 @@
 ﻿using CatalogoProdutos;
 using CatalogoProdutos.DTO;
-using Trabalho;
 using CatalogoProdutos.Infra;
+using Microsoft.AspNetCore.Mvc;
+using Trabalho;
 
 namespace Services
 {
@@ -35,7 +36,7 @@ namespace Services
             _dataContext.SaveChanges();
         }
 
-        public void Alterar(int id, EditarProdutoDTO dadosAlteracao)
+        public void Alterar(int id, [FromBody] EditarProdutoDTO dadosAlteracao)
         {
             var produto = _dataContext.Produtos.FirstOrDefault(p => p.Id == id);
 
